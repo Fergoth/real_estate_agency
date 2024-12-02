@@ -19,6 +19,7 @@ def move_backwards(apps, schema_editor):
         flat.new_building = None
         flat.save()
 
+
 class Migration(migrations.Migration):
 
     dependencies = [
