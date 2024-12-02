@@ -30,7 +30,6 @@ class FlatAdmin(admin.ModelAdmin):
     exclude = ['flats']
 
 
-
 class ComplaintAdmin(admin.ModelAdmin):
     raw_id_fields = ('user', 'flat')
 
