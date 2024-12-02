@@ -58,7 +58,12 @@ class Flat(models.Model):
         verbose_name='Кто лайкнул',
         blank=True
     )
-    owner_pure_phone = PhoneNumberField(null=True, blank=True, region='RU')
+    owner_pure_phone = PhoneNumberField(
+        'Нормализованный номер владельца',
+        null=True,
+        blank=True,
+        region='RU'
+        )
 
     def __str__(self):
         return f'{self.town}, {self.address} ({self.price}р.)'
