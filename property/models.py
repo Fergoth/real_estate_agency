@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Flat(models.Model):
@@ -54,8 +55,10 @@ class Flat(models.Model):
     liked_by = models.ManyToManyField(
         User,
         related_name='liked_flats',
-        verbose_name='Кто лайкнул'
+        verbose_name='Кто лайкнул',
+        blank=True
     )
+    owner_pure_phone = PhoneNumberField(null=True, blank=True, region='RU')
 
     def __str__(self):
         return f'{self.town}, {self.address} ({self.price}р.)'
