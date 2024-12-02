@@ -17,8 +17,7 @@ def fill_owners(apps, schema_editor):
 
 def move_backwards(apps, schema_editor):
     Owner = apps.get_model('property', 'Owner')
-    for owner in Owner.objects.all():
-        owner.delete()
+    Owner.objects.all().delete()
 
 
 class Migration(migrations.Migration):

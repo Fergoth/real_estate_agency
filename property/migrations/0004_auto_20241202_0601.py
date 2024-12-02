@@ -4,8 +4,8 @@ from django.db import migrations
 
 
 def fill_new_building_field(apps, schema_editor):
-    Flats = apps.get_model('property', 'Flat')
-    for flat in Flats.objects.all():
+    Flat = apps.get_model('property', 'Flat')
+    for flat in Flat.objects.all():
         if flat.construction_year >= 2015:
             flat.new_building = True
         else:
@@ -14,8 +14,8 @@ def fill_new_building_field(apps, schema_editor):
 
 
 def move_backwards(apps, schema_editor):
-    Flats = apps.get_model('property', 'Flat')
-    for flat in Flats.objects.all():
+    Flat = apps.get_model('property', 'Flat')
+    for flat in Flat.objects.all():
         flat.new_building = None
         flat.save()
 
