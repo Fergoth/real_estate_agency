@@ -93,4 +93,4 @@ class Owner(models.Model):
         )
 
     def __str__(self):
-        return f"{self.fullname} {self.owner_pure_phone} {[str(i) for i in self.flats.all()]}"
+        return f"{self.fullname} {self.owner_pure_phone}"
