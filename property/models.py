@@ -64,11 +64,13 @@ class Flat(models.Model):
 class Complaint(models.Model):
     user = models.ForeignKey(
         User,
+        related_name='complaints',
         verbose_name="Кто жаловался",
         on_delete=models.DO_NOTHING
     )
     flat = models.ForeignKey(
         Flat,
+        related_name='complaints',
         verbose_name='Квартира на которую пожаловались',
         on_delete=models.DO_NOTHING
     )
