@@ -20,7 +20,7 @@ def fill_pure_phones(apps, schema_editor):
 
 def move_backwards(apps, schema_editor):
     Flat = apps.get_model('property', 'Flat')
-    Flat.objects.filter(owner_pure_phone=None)
+    Flat.objects.all().update(owner_pure_phone=None)
 
 
 class Migration(migrations.Migration):

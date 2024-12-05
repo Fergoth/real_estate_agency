@@ -13,7 +13,7 @@ def fill_owners_flats(apps, schema_editor):
 
 def move_backwards(apps, schema_editor):
     Owner = apps.get_model('property', 'Owner')
-    Owner.objects.update(flats=[])
+    Owner.objects.all().update(flats=[])
 
 
 class Migration(migrations.Migration):
